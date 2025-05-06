@@ -1,0 +1,71 @@
+text,intent
+"Can you look up how to cook biryani?",google_search
+"Search for Python data structures",google_search
+"Find me the best pizza place nearby",google_search
+"I want to know who won the World Cup",google_search
+"Can you google the history of AI?",google_search
+"Tell me what recursion is",google_search
+"Check what time it is in Tokyo",google_search
+"Look up worm tracking techniques",google_search
+"What is the tallest building in the world?",google_search
+"Get me information on black holes",google_search
+"Open YouTube",open_youtube
+"Launch YouTube",open_youtube
+"Go to YouTube",open_youtube
+"Bring up YouTube for me",open_youtube
+"I want to open YouTube",open_youtube
+"Can you open the YouTube app?",open_youtube
+"Start YouTube",open_youtube
+"Show me YouTube",open_youtube
+"Access YouTube",open_youtube
+"Take me to YouTube",open_youtube
+"Open my browser",open_browser
+"Launch a web browser",open_browser
+"Start Google Chrome",open_browser
+"Open Firefox",open_browser
+"Bring up my internet browser",open_browser
+"Can you launch the browser?",open_browser
+"Open the default browser",open_browser
+"I need a browser",open_browser
+"Open Safari",open_browser
+"Start browsing the web",open_browser
+"What time is it?",tell_time
+"Tell me the time",tell_time
+"Do you know the current time?",tell_time
+"Can you say the time?",tell_time
+"What’s the time right now?",tell_time
+"Say the time please",tell_time
+"Check the time",tell_time
+"How late is it?",tell_time
+"Give me the current time",tell_time
+"Do you know what time it is?",tell_time
+"Explain quantum computing",llm_query
+"What is machine learning?",llm_query
+"How do airplanes fly?",llm_query
+"Tell me about black holes",llm_query
+"Can you describe recursion?",llm_query
+"What are generative models?",llm_query
+"Give me a summary of deep learning",llm_query
+"Why is the sky blue?",llm_query
+"Define reinforcement learning",llm_query
+"In simple terms, explain transformers in NLP",llm_query
+"I don’t know what to ask",llm_fallback
+"Can you do something cool?",llm_fallback
+"Uhh just talk to me",llm_fallback
+"Give me a random fact",llm_fallback
+"Make me laugh",llm_fallback
+"Tell me something interesting",llm_fallback
+"I’m bored",llm_fallback
+"You there?",llm_fallback
+"Talk to me",llm_fallback
+"Help",llm_fallback
+"Search YouTube for lo-fi beats",search_youtube
+"Find a video about Python tutorials",search_youtube
+"I want to watch a comedy sketch",search_youtube
+"Can you show me GTA 6 trailers?",search_youtube
+"Look up relaxing music on YouTube",search_youtube
+"What's the weather like?",get_weather
+"Tell me the weather",get_weather
+"How cold is it outside?",get_weather
+"Check the weather",get_weather
+"What's the temperature today?",get_weather
