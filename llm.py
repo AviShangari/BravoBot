@@ -25,6 +25,7 @@ class LLMInterface:
             response = requests.post(self.api_url, json=payload)
             response.raise_for_status()
             data = response.json()
+            print(f"BravoBot: {data['response'].strip()}")
             return data['response'].strip()
         except Exception as e:
             print(f"Error talking to Ollama: {e}")
@@ -41,6 +42,7 @@ class LLMInterface:
                     {"role": "user", "content": prompt}
                 ]
             )
+            print(f"BravoBot: {response.choices[0].message.content.strip()}")
             return response.choices[0].message.content.strip()
         except Exception as e:
             print("OpenAI error:", e)

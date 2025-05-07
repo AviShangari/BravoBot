@@ -9,19 +9,24 @@ import urllib.parse
 class Automation:
     def open_youtube(self):
         webbrowser.open("https://www.youtube.com")
+        print("BravoBot: Opening YouTube...")
 
     def google_search(self, query):
         webbrowser.open(f"https://www.google.com/search?q={query}")
+        print(f"Bravobot: Searching Google for: {query}")
 
     def open_browser(self):
         webbrowser.open("https://www.google.com")
+        print("BravoBot: Opening Google Chrome browser...")
 
     def tell_time(self):
         now = datetime.datetime.now()
+        print(f"Bravobot: The current time is {now.strftime('%I:%M %p')}")
         return f"The current time is {now.strftime('%I:%M %p')}"
     
     def search_youtube(self, query):
         encoded_query = urllib.parse.quote_plus(query)
+        print(f"Bravobot: Searching youtube for: {query}")
         url = f"https://www.youtube.com/results?search_query={encoded_query}"
         webbrowser.open(url)
     
@@ -47,9 +52,11 @@ class Automation:
                 else:
                     precip_msg = "No precipitation expected today."
 
+                print(f"Bravobot: The current temperature in {city} is {temp}°C with {condition}. {precip_msg}")
                 return f"The current temperature in {city} is {temp}°C with {condition}. {precip_msg}"
 
             else:
+                print("Bravobot: Sorry, I couldn't fetch the weather right now.")
                 return "Sorry, I couldn't fetch the weather right now."
 
         except Exception as e:
