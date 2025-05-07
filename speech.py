@@ -91,7 +91,7 @@ class SpeechInterface:
     def stop_speaking(self):
         self.stop_requested = True
         self.engine.stop()
-        self.engine = pyttsx3.init()
+        # self.engine = pyttsx3.init()
         self.skip_next_input = True
 
     def listen_for_keyboard_stop(self):
