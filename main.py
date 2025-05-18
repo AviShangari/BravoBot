@@ -61,6 +61,21 @@ while True:
             response = auto.get_weather()
             speech.listen_for_keyboard_stop()
             speech.speak(response)
+        
+        elif command == "take_note":
+            auto.take_note(user_input)
+            speech.listen_for_keyboard_stop()
+            speech.speak("Note saved.")
+
+        elif command == "summarize_note":
+            result = auto.summarize_last_note()
+            speech.listen_for_keyboard_stop()
+            speech.speak(result)
+
+        elif command == "list_notes":
+            result = auto.list_notes()
+            speech.listen_for_keyboard_stop()
+            speech.speak(result)
 
         elif command in ["llm_query", "llm_fallback"]:
             use_openai = "use gpt" in user_input.lower()

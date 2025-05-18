@@ -5,6 +5,8 @@ import os
 import requests
 from dotenv import load_dotenv
 import urllib.parse
+import csv
+from llm import LLMInterface
 
 class Automation:
     def open_youtube(self):
@@ -62,6 +64,41 @@ class Automation:
         except Exception as e:
             print("Weather error:", e)
             return "Something went wrong while checking the weather."
+    
+    def take_note(self, text):
+        timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        note = text.strip()
+        with open("notes.csv", mode="a", newline='', encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow([timestamp, note])
+        print(f"Bravobot: Saved note: {note}")
+
+    def summarize_last_note(self):
+        try:
+            with open("notes.csv", mode="r", encoding="utf-8") as f:
+                rows = list(csv.reader(f))
+                if not rows:
+                    return "There are no notes to summarize."
+                last_note = rows[-1][1]
+        except FileNotFoundError:
+            return "You don't have any notes yet."
+
+        llm = LLMInterface()
+        prompt = f"Summarize this note: {last_note}"
+        summary = llm.ask(prompt)
+        return f"Summary: {summary}"
+
+    def list_notes(self, limit=3):
+        try:
+            with open("notes.csv", mode="r", encoding="utf-8") as f:
+                rows = list(csv.reader(f))[-limit:]
+                if not rows:
+                    return "You have no saved notes."
+        except FileNotFoundError:
+            return "You haven't taken any notes yet."
+
+        result = [f"{i+1}. {row[1]}" for i, row in enumerate(rows)]
+        return "Here are your recent notes:\n" + "\n".join(result)
 
 
 # Example usage:
