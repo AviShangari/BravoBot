@@ -88,7 +88,7 @@ class Automation:
         summary = llm.ask(prompt)
         return f"Summary: {summary}"
 
-    def list_notes(self, limit=3):
+    def list_notes(self, limit=5):
         try:
             with open("notes.csv", mode="r", encoding="utf-8") as f:
                 rows = list(csv.reader(f))[-limit:]

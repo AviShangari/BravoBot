@@ -1,3 +1,4 @@
 .env
 __pycache__
 intent_model
+notes.csv

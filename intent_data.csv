@@ -79,15 +79,17 @@ can you summarize my notes,summarize_note
 what is the last note about,summarize_note
 last note summary,summarize_note
 give me a short version of my note,summarize_note
-list all notes,list_notes
+list all the notes,list_notes
 read me my notes,list_notes
-show recent notes,list_notes
+show me all my recent notes,list_notes
 what notes do I have,list_notes
+what notes have i made,list_notes
+could you give me a list of all my notes, list_notes
 list my saved notes,list_notes
-show me notes,list_notes
-read last few notes,list_notes
-what have I saved,list_notes
-my note history,list_notes
+show me all my notes,list_notes
+read the last few notes,list_notes
+what have I saved in my notes,list_notes
+show me my note history,list_notes
 tell me my previous notes,list_notes
 what is machine learning,llm_query
 explain deep learning,llm_query

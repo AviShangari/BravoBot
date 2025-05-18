@@ -63,7 +63,23 @@ while True:
             speech.speak(response)
         
         elif command == "take_note":
-            auto.take_note(user_input)
+            flag = False
+
+            while not flag:
+                speech.speak("What would you like to note?")
+                print("BravoBot: What would you like to note?")
+                note = speech.listen()
+                print(f"User Prompt: {note}")
+                speech.speak("Is this correct?")
+                print("BravoBot: Is this correct? (Yes or no)")
+
+                decision = speech.listen()
+                if "yes" in decision.lower() or "yeah" in decision.lower():
+                    flag = True
+                else:
+                    pass
+
+            auto.take_note(note)
             speech.listen_for_keyboard_stop()
             speech.speak("Note saved.")
 
@@ -84,7 +100,7 @@ while True:
             else:
                 reply = llm.ask(user_input)
                 if "sorry, i couldn't process that" in reply.lower():
-                    print("Ollama failed, falling back to OpenAI...")
+                    print("BravoBot: Ollama failed, falling back to OpenAI...")
                     reply = llm.ask_with_openai(user_input)
             speech.listen_for_keyboard_stop()
             speech.speak(reply)
