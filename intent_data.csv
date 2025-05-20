@@ -101,3 +101,13 @@ how does gradient descent work,llm_query
 difference between AI and ML,llm_query
 how to learn data science,llm_query
 what is artificial intelligence,llm_query
+what did i say this morning,log_query
+what did i ask yesterday,log_query
+what did i say on may 15,log_query
+what did we talk about yesterday,log_query
+tell me what i said last hour,log_query
+summarize what we discussed this morning,log_query
+remind me what i asked you this week,log_query
+tell me what i said today,log_query
+what have i said so far,log_query
+what did i ask about food yesterday,log_query

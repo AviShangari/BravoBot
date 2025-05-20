@@ -1,5 +1,3 @@
-# -------- speech.py --------
-
 import whisper
 import pyttsx3
 import sounddevice as sd
@@ -11,6 +9,8 @@ import queue
 import warnings
 import re
 from pynput import keyboard
+from session_log import SessionLogger
+logger = SessionLogger()
 
 warnings.filterwarnings("ignore", category=FutureWarning, module="whisper")
 
@@ -106,3 +106,7 @@ class SpeechInterface:
         listener.daemon = True
         listener.start()
         self._stop_listener_thread_started = True
+    
+    def speak_and_log(self, text):
+        self.speak(text)
+        logger.log("bot", text)
