@@ -5,3 +5,5 @@ notes.csv
 BRAVOBOT_V2.docx
 *.db
 ~$*.docx
+*.faiss
+*.pkl

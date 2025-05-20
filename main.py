@@ -5,25 +5,13 @@ from automation import Automation
 import re
 import time
 from memory import MemoryStore
-from utils import extract_memory_pair, format_memory_for_prompt
 from session_log import SessionLogger
-from time_utils import get_time_range_from_phrase
-
+from vector_store import VectorStore
 from handlers.log_query_handler import handle_log_query
 from handlers.llm_handler import handle_llm_query
-
-from handlers.memory_handlers import (
-    handle_remember,
-    handle_recall,
-    handle_forget
-)
-
-from handlers.note_handler import (
-    handle_take_note,
-    handle_summarize_note,
-    handle_list_notes
-)
-
+from handlers.vector_memory_handler import handle_vector_remember, handle_vector_recall
+from handlers.memory_handlers import handle_remember, handle_recall, handle_forget
+from handlers.note_handler import handle_take_note, handle_summarize_note, handle_list_notes
 from handlers.automation_handlers import (
     handle_open_youtube,
     handle_open_browser,
@@ -34,6 +22,7 @@ from handlers.automation_handlers import (
 )
 
 
+vector_mem = VectorStore()
 logger = SessionLogger()
 mem = MemoryStore()
 speech = SpeechInterface()
@@ -49,7 +38,8 @@ context = {
     "speech": speech,
     "llm": llm,
     "auto": auto,
-    "intent_model": intent_model
+    "intent_model": intent_model,
+    "vector_mem": vector_mem
 }
 
 handlers = {
@@ -68,6 +58,8 @@ handlers = {
     "get_weather": handle_get_weather,
     "llm_query": handle_llm_query,
     "llm_fallback": handle_llm_query,
+    "vector_remember": handle_vector_remember,
+    "vector_recall": handle_vector_recall
 }
 
 while True:

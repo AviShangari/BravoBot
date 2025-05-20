@@ -111,3 +111,9 @@ remind me what i asked you this week,log_query
 tell me what i said today,log_query
 what have i said so far,log_query
 what did i ask about food yesterday,log_query
+remember this for later,vector_remember
+store this in memory,vector_remember
+keep this in mind,vector_remember
+what do you remember about me,vector_recall
+recall something I've told you,vector_recall
+tell me what I said before,vector_recall
