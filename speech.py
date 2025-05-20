@@ -9,15 +9,13 @@ import queue
 import warnings
 import re
 from pynput import keyboard
-from session_log import SessionLogger
-logger = SessionLogger()
 
 warnings.filterwarnings("ignore", category=FutureWarning, module="whisper")
 
 class SpeechInterface:
     def __init__(self):
         self.model = whisper.load_model("small")
-
+        self.logger = None
         device = str(self.model.device)
         if "cuda" in device:
             device = "gpu"
@@ -109,4 +107,4 @@ class SpeechInterface:
     
     def speak_and_log(self, text):
         self.speak(text)
-        logger.log("bot", text)
+        self.logger.log("bot", text)
