@@ -1,0 +1,16 @@
+# Voice and audio
+whisper
+pyttsx3
+pyaudio
+
+# LLM & embeddings
+sentence-transformers
+faiss-cpu
+openai
+
+# Core dependencies
+numpy
+scikit-learn
+
+# Testing
+pytest
