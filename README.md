@@ -19,7 +19,7 @@
 ## 🛠️ Tech Stack
 
 - Python 3.11+
-- `speechrecognition`, `pyttsx3` – Voice input/output
+- `whisper`, `pyttsx3` – Voice input/output
 - `sentence-transformers`, `faiss` – Vector memory
 - `Ollama`, `OpenAI` – LLMs
 - `sqlite3`, `pickle` – Memory and logs
