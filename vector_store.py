@@ -53,7 +53,8 @@ class VectorStore:
             # Rebuild index from scratch
             new_embeddings = self.model.encode(self.texts)
             self.index = faiss.IndexFlatL2(self.dim)
-            if new_embeddings:
+            if len(self.texts) > 0:
+                new_embeddings = self.model.encode(self.texts)
                 self.index.add(new_embeddings)
             self._save()
             return True

@@ -7,3 +7,4 @@ BRAVOBOT_V2.docx
 ~$*.docx
 *.faiss
 *.pkl
+.pytest_cache
